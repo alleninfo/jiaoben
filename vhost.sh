@@ -13,7 +13,7 @@ do
     else
         mkdir -p /data/wwwroot/$input_domain
         echo '你的网站创建成功' > /data/wwwroot/$input_domain/index.php
-        cp -a /data/nginx/conf/default.conf /data/nginx/conf/$input_domain.conf
+        cp -a ./default.conf /data/nginx/conf/$input_domain.conf
         echo '你的网站创建成功'
         sed -i "s/server_name  _/server_name  $input_domain/" /data/nginx/conf/$input_domain.conf
         sed -i "s/default.access.log/$input_domain.access.log/" /data/nginx/conf/$input_domain.conf
